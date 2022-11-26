@@ -1,6 +1,11 @@
+import hamburger from "./assets/images/icon-hamburger.svg";
 function App() {
   return (
     <>
+      <header>
+        <p>crowdfund</p>
+        <img src={hamburger} alt="hamburger" />
+      </header>
       About Discover Get Started Mastercraft Bamboo Monitor Riser A beautiful &
       handcrafted monitor stand to reduce neck and eye strain. Back this project
       Bookmark $89,914 of $100,000 backed 5,007 total backers 56 days left About
