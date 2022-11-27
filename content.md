@@ -1,5 +1,4 @@
-Bookmark $89,914 of
-$100,000 backed 5,007 total backers 56 days left About this project The
+About this project The
 Mastercraft Bamboo Monitor Riser is a sturdy and stylish platform that
 elevates your screen to a more comfortable viewing height. Placing your
 monitor at eye level has the potential to improve your posture and make

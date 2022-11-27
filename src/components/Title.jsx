@@ -1,11 +1,12 @@
 import React from "react";
+import CardWrapper from "./CardWrapper";
 
 import mastercraft from "../assets/images/logo-mastercraft.svg";
 import bookmark from "../assets/images/icon-bookmark.svg";
 
 const Title = () => {
   return (
-    <div className="mx-auto w-3/4 text-center flex flex-col shadow-lg rounded-lg p-5 -mt-14 bg-white">
+    <CardWrapper negative>
       <img
         className="self-center -mt-12"
         src={mastercraft}
@@ -23,7 +24,7 @@ const Title = () => {
         </button>
         <img src={bookmark} alt="bookmark icon" />
       </div>
-    </div>
+    </CardWrapper>
   );
 };
 
