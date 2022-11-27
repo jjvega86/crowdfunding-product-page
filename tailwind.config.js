@@ -7,6 +7,7 @@ module.exports = {
       "cyan-dark": "hsl(176, 72%, 28%)",
       black: "hsl(0, 0%, 0%)",
       "gray-dark": "hsl(0, 0%, 48%)",
+      white: "#FFFFFF",
     },
     fontFamily: {
       commissioner: ["Commissioner", "sans-serif"],
