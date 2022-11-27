@@ -1,12 +1,13 @@
 import Header from "./components/Header";
 import Title from "./components/Title";
-import Progress from "./components/Progress";
+import ProjectStats from "./components/ProjectStats";
+
 function App() {
   return (
     <div className="font-commissioner">
       <Header />
       <Title />
-      <Progress />
+      <ProjectStats />
     </div>
   );
 }
