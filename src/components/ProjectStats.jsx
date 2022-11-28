@@ -14,7 +14,7 @@ const ProjectStats = () => {
         <Stat stat={"5,007"} support={"total backers"} />
         <StatRule />
         <Stat stat={"56"} support={"days left"} />
-        <ProgressBar percentage={"55%"} />
+        <ProgressBar percentage={"89%"} />
       </div>
     </CardWrapper>
   );

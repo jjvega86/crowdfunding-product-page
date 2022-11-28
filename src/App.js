@@ -1,6 +1,7 @@
 import Header from "./components/Header";
 import Title from "./components/Title";
 import ProjectStats from "./components/ProjectStats";
+import PledgeOptions from "./components/PledgeOptions";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Header />
       <Title />
       <ProjectStats />
+      <PledgeOptions />
     </div>
   );
 }
