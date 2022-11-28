@@ -6,8 +6,10 @@ const PledgeOptions = () => {
   return (
     <CardWrapper>
       <div className="p-6 text-left text-gray-dark">
-        <h3>About this project</h3>
-        <p>
+        <h3 className="text-xl font-bold text-black mb-5">
+          About this project
+        </h3>
+        <p className="mb-5">
           The Mastercraft Bamboo Monitor Riser is a sturdy and stylish platform
           that elevates your screen to a more comfortable viewing height.
           Placing your monitor at eye level has the potential to improve your
