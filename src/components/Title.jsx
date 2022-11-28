@@ -1,8 +1,7 @@
 import React from "react";
 import CardWrapper from "./CardWrapper";
-
+import Bookmark from "./Bookmark";
 import mastercraft from "../assets/images/logo-mastercraft.svg";
-import bookmark from "../assets/images/icon-bookmark.svg";
 
 const Title = () => {
   return (
@@ -15,14 +14,14 @@ const Title = () => {
       <h3 className="font-bold text-2xl p-5">
         Mastercraft Bamboo Monitor Riser
       </h3>
-      <p className="text-gray-dark">
+      <p className="text-gray-dark mb-5">
         A beautiful & handcrafted monitor stand to reduce neck and eye strain.
       </p>
-      <div className="flex justify-evenly mt-6">
+      <div className="flex justify-evenly sm:justify-between sm:px-3 sm:pb-8 mt-6">
         <button className="bg-cyan-light text-white rounded-full py-3 px-10 font-bold">
           Back this project
         </button>
-        <img src={bookmark} alt="bookmark icon" />
+        <Bookmark />
       </div>
     </CardWrapper>
   );
