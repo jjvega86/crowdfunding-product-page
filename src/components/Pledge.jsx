@@ -2,7 +2,7 @@ import React from "react";
 
 const Pledge = ({ name, pledgeAmt, description, quantity }) => {
   return (
-    <div className="border-2 border-solid border-gray-light rounded-lg p-6">
+    <div className="border-2 border-solid border-gray-light rounded-lg p-6 mt-7">
       <h3 className="text-black text-lg font-bold mb-1">{name}</h3>
       <p className="text-cyan-light font-medium mb-7">{`Pledge $${pledgeAmt} or more`}</p>
       <p className="mb-7">{description}</p>

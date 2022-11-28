@@ -27,6 +27,22 @@ const PledgeOptions = () => {
         member list.`}
           quantity={101}
         />
+        <Pledge
+          name={"Black Edition Stand"}
+          pledgeAmt={75}
+          description={`You get a Black Special Edition computer stand and a personal thank
+you. You’ll be added to our Backer member list. Shipping is included.`}
+          quantity={64}
+        />
+        <Pledge
+          name={"Mahogany Special Edition"}
+          pledgeAmt={200}
+          description={`You get
+two Special Edition Mahogany stands, a Backer T-Shirt, and a personal
+thank you. You’ll be added to our Backer member list. Shipping is
+included.`}
+          quantity={0}
+        />
       </div>
     </CardWrapper>
   );

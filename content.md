@@ -1,10 +1,3 @@
-101 left Select Reward Black Edition Stand Pledge $75 or
-more You get a Black Special Edition computer stand and a personal thank
-you. You’ll be added to our Backer member list. Shipping is included. 64
-left Select Reward Mahogany Special Edition Pledge $200 or more You get
-two Special Edition Mahogany stands, a Backer T-Shirt, and a personal
-thank you. You’ll be added to our Backer member list. Shipping is
-included. 0 left Out of Stock
 {/_ <!-- Selection modal start --> _/}
 Back this project Want to support us in bringing Mastercraft Bamboo
 Monitor Riser out in the world? Pledge with no reward Choose to support
