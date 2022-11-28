@@ -8,14 +8,14 @@ import ProgressBar from "./ProgressBar";
 const ProjectStats = () => {
   return (
     <CardWrapper>
-      <div className="text-gray-dark flex flex-col">
+      <div className="text-gray-dark flex flex-col sm:flex-row sm:justify-evenly sm:my-8">
         <Stat stat={"$89,000"} support={"of $100,000 backed"} />
         <StatRule />
         <Stat stat={"5,007"} support={"total backers"} />
         <StatRule />
         <Stat stat={"56"} support={"days left"} />
-        <ProgressBar percentage={"89%"} />
       </div>
+      <ProgressBar percentage={"89%"} />
     </CardWrapper>
   );
 };
