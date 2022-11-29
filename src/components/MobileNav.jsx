@@ -38,7 +38,7 @@ const MobileNav = () => {
         <div className="min-h-screen min-w-full bg-gray-dark bg-opacity-25 fixed right-0 top-0">
           <img
             onClick={handleToggle}
-            className="h-6 w-6 sm:hidden top-8 right-6 absolute"
+            className="h-6 w-6 sm:hidden top-8 right-9 absolute"
             src={close}
             alt="close icon"
           />
