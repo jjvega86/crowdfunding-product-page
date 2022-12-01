@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Modal from "./Modal";
+import PledgeSelections from "./PledgeSelections";
 
 const RewardButton = ({ outOfStock }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +21,14 @@ const RewardButton = ({ outOfStock }) => {
           Select Reward
         </button>
       )}
-      <Modal isOpen={isOpen} setIsOpen={setIsOpen} />
+      <Modal
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+        title="Back this project"
+        description="Want to support us in bringing Mastercraft Bamboo Monitor Rise out in the world?"
+      >
+        <PledgeSelections />
+      </Modal>
     </div>
   );
 };
