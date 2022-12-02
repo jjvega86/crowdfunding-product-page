@@ -13,7 +13,12 @@ module.exports = {
     fontFamily: {
       commissioner: ["Commissioner", "sans-serif"],
     },
-    extend: {},
+    extend: {
+      backgroundImage: (theme) => ({
+        mobile: "url(./assets/images/image-hero-mobile.jpg)",
+        desktop: "url(./assets/images/image-hero-desktop.jpg)",
+      }),
+    },
   },
   plugins: [],
 };
