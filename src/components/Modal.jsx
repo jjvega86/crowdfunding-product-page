@@ -1,5 +1,4 @@
 import { Dialog } from "@headlessui/react";
-
 import closeModal from "../assets/images/icon-close-modal.svg";
 
 const Modal = ({ children, isOpen, setIsOpen, title, description }) => {

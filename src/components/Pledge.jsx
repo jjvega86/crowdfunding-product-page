@@ -1,8 +1,9 @@
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import RewardButton from "./RewardButton";
 
 const Pledge = ({ name, pledgeAmt, description, quantity, isSelection }) => {
   const outOfStock = useMemo(() => (quantity <= 0 ? true : false), [quantity]);
+  const [selected, setSelected] = useState(false);
 
   return (
     <div
@@ -11,7 +12,15 @@ const Pledge = ({ name, pledgeAmt, description, quantity, isSelection }) => {
       } border-2 border-solid border-gray-light rounded-lg p-6 mt-7`}
     >
       <div className="flex sm:flex-row sm:justify-between">
-        {isSelection && <input className="mr-5" type="radio" name="pledge" />}
+        {isSelection && (
+          <input
+            className="mr-5"
+            type="radio"
+            name="pledge"
+            checked={selected}
+            onChange={() => setSelected(!selected)}
+          />
+        )}
         <div>
           <h3 className="text-black text-lg font-bold mb-1">{name}</h3>
           {pledgeAmt && (
@@ -35,6 +44,20 @@ const Pledge = ({ name, pledgeAmt, description, quantity, isSelection }) => {
         )}
         {!isSelection && <RewardButton outOfStock={outOfStock} />}
       </div>
+      {selected && (
+        <div>
+          <hr />
+          <div className="flex flex-row justify-between">
+            <input
+              className="border-solid"
+              type="number"
+              name="quantity"
+              value={pledgeAmt}
+            />
+            <button>Continue</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
