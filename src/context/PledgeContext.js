@@ -3,9 +3,9 @@ import { createContext, useState } from "react";
 export const PledgeContext = createContext();
 
 const initialState = {
-  bambooStandQty: 101,
-  blackEditionStandQty: 64,
-  mahoganySpecialEditionQty: 0,
+  bambooStand: 101,
+  blackEditionStand: 64,
+  mahoganySpecialEdition: 0,
 };
 
 export const PledgeProvider = ({ children }) => {

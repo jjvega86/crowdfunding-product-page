@@ -1,21 +1,33 @@
 import { useMemo, useState } from "react";
+import { useContext } from "react";
+import { PledgeContext } from "../context/PledgeContext";
 
 const PledgeSelection = ({
+  title,
   name,
   pledgeAmt,
   description,
-  quantity,
   onChange,
   setIsOpen,
   setSuccessIsOpen,
   current,
 }) => {
-  const outOfStock = useMemo(() => (quantity <= 0 ? true : false), [quantity]);
-  const isSelected = current === name;
+  const { pledges, setPledges } = useContext(PledgeContext);
+  const quantity = pledges[`${name}`];
+  const outOfStock = useMemo(
+    () => (quantity <= 0 && name !== null ? true : false),
+    [quantity, name]
+  );
+  const isSelected = current === title;
   const [pledgeValue, setPledgeValue] = useState(pledgeAmt);
 
   const handleComplete = () => {
+    console.log(pledgeValue);
     setIsOpen(false);
+    setPledges({
+      ...pledges,
+      [`${name}`]: quantity - 1,
+    });
     setSuccessIsOpen(true);
   };
 
@@ -30,13 +42,13 @@ const PledgeSelection = ({
           className="mr-5"
           type="radio"
           name="pledge"
-          value={name}
+          value={title}
           checked={isSelected}
           onChange={onChange}
           disabled={outOfStock}
         />
         <div>
-          <h3 className="text-black text-lg font-bold mb-1">{name}</h3>
+          <h3 className="text-black text-lg font-bold mb-1">{title}</h3>
           {pledgeAmt && (
             <p className="text-cyan-light font-medium mb-7">{`Pledge $${pledgeAmt} or more`}</p>
           )}

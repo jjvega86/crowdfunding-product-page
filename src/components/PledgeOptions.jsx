@@ -1,7 +1,11 @@
 import CardWrapper from "./CardWrapper";
 import Pledge from "./Pledge";
+import { useContext } from "react";
+import { PledgeContext } from "../context/PledgeContext";
 
 const PledgeOptions = () => {
+  const { pledges } = useContext(PledgeContext);
+
   return (
     <>
       <CardWrapper>
@@ -27,14 +31,14 @@ const PledgeOptions = () => {
             description={`You get an ergonomic stand made of natural bamboo. You've helped us
           launch our promotional campaign, and you'll be added to a special Backer
           member list.`}
-            quantity={101}
+            quantity={pledges.bambooStand}
           />
           <Pledge
             name={"Black Edition Stand"}
             pledgeAmt={75}
             description={`You get a Black Special Edition computer stand and a personal thank
       you. You’ll be added to our Backer member list. Shipping is included.`}
-            quantity={64}
+            quantity={pledges.blackEditionStand}
           />
           <Pledge
             name={"Mahogany Special Edition"}
@@ -43,7 +47,7 @@ const PledgeOptions = () => {
       two Special Edition Mahogany stands, a Backer T-Shirt, and a personal
       thank you. You’ll be added to our Backer member list. Shipping is
       included.`}
-            quantity={0}
+            quantity={pledges.mahoganySpecialEdition}
           />
         </div>
       </CardWrapper>
