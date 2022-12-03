@@ -47,16 +47,22 @@ const PledgeSelection = ({
       </div>
       {isSelected && (
         <div>
+          {console.log(pledgeValue)}
           <hr />
-          <div className="flex flex-row justify-between">
-            <input
-              className="border-solid"
-              type="number"
-              name="quantity"
-              value={pledgeValue}
-              onChange={(e) => setPledgeValue(e.target.value)}
-            />
-            <button>Continue</button>
+          <div className="flex flex-row justify-between mt-5">
+            <div className="flex flex-row items-center p-2 border-2 w-24 rounded-full border-gray-light">
+              <p className="ml-2">$</p>
+              <input
+                className="ml-2 w-1/2 text-black font-bold text-lg"
+                type="number"
+                name="quantity"
+                value={pledgeValue}
+                onInput={(e) => setPledgeValue(e.target.value)}
+              />
+            </div>
+            <button className="bg-cyan-light text-white rounded-full py-3 px-6 font-bold">
+              Continue
+            </button>
           </div>
         </div>
       )}
