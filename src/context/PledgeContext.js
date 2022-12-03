@@ -10,9 +10,13 @@ const initialState = {
 
 export const PledgeProvider = ({ children }) => {
   const [pledges, setPledges] = useState(initialState);
+  const [backers, setBackers] = useState(5007);
+  const [raised, setRaised] = useState(89000);
 
   return (
-    <PledgeContext.Provider value={{ pledges, setPledges }}>
+    <PledgeContext.Provider
+      value={{ pledges, setPledges, backers, setBackers, raised, setRaised }}
+    >
       {children}
     </PledgeContext.Provider>
   );

@@ -1,10 +1,6 @@
 import { useState } from "react";
 import PledgeSelection from "./PledgeSelection";
 
-// TODO: Change pledge amount after pledge for correct item
-// TODO: Wire data flow to change project stats after pledge selection
-// TODO: Refactor to lift modals higher (currently two modals per button, just want two modals total)
-
 const PledgeSelections = ({ setIsOpen, setSuccessIsOpen }) => {
   const [currentChoice, setCurrentChoice] = useState("");
 

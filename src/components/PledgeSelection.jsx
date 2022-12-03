@@ -12,7 +12,8 @@ const PledgeSelection = ({
   setSuccessIsOpen,
   current,
 }) => {
-  const { pledges, setPledges } = useContext(PledgeContext);
+  const { pledges, setPledges, setBackers, setRaised } =
+    useContext(PledgeContext);
   const quantity = pledges[`${name}`];
   const outOfStock = useMemo(
     () => (quantity <= 0 && name !== null ? true : false),
@@ -28,6 +29,8 @@ const PledgeSelection = ({
       ...pledges,
       [`${name}`]: quantity - 1,
     });
+    setBackers((prev) => prev + 1);
+    setRaised((prev) => prev + +pledgeValue);
     setSuccessIsOpen(true);
   };
 
