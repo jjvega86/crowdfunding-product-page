@@ -1,8 +1,6 @@
 import { useState } from "react";
-import Pledge from "./Pledge";
 import PledgeSelection from "./PledgeSelection";
 
-// TODO: Add "success" modal -> transition after pledge is made
 // TODO: Change pledge amount after pledge for correct item
 // TODO: Wire data flow to change project stats after pledge selection
 
@@ -12,14 +10,14 @@ const initialState = {
   mahoganySpecialEditionQty: 0,
 };
 
-const PledgeSelections = ({ setIsOpen }) => {
+const PledgeSelections = ({ setIsOpen, setSuccessIsOpen }) => {
   const [pledges, setPledges] = useState(initialState);
   const [currentChoice, setCurrentChoice] = useState("");
-  console.log(currentChoice);
 
   const handleChange = (e) => {
     setCurrentChoice(e.target.value);
   };
+
   return (
     <div className="text-gray-dark">
       <PledgeSelection
@@ -27,6 +25,8 @@ const PledgeSelections = ({ setIsOpen }) => {
         description={`Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email.`}
         onChange={handleChange}
         current={currentChoice}
+        setIsOpen={setIsOpen}
+        setSuccessIsOpen={setSuccessIsOpen}
       />
       <PledgeSelection
         name={"Bamboo Stand"}
@@ -37,6 +37,8 @@ const PledgeSelections = ({ setIsOpen }) => {
         quantity={pledges.bambooStandQty}
         onChange={handleChange}
         current={currentChoice}
+        setIsOpen={setIsOpen}
+        setSuccessIsOpen={setSuccessIsOpen}
       />
       <PledgeSelection
         name={"Black Edition Stand"}
@@ -46,6 +48,8 @@ const PledgeSelections = ({ setIsOpen }) => {
         quantity={pledges.blackEditionStandQty}
         onChange={handleChange}
         current={currentChoice}
+        setIsOpen={setIsOpen}
+        setSuccessIsOpen={setSuccessIsOpen}
       />
       <PledgeSelection
         name={"Mahogany Special Edition"}
@@ -57,6 +61,8 @@ const PledgeSelections = ({ setIsOpen }) => {
         quantity={pledges.mahoganySpecialEditionQty}
         onChange={handleChange}
         current={currentChoice}
+        setIsOpen={setIsOpen}
+        setSuccessIsOpen={setSuccessIsOpen}
       />
     </div>
   );

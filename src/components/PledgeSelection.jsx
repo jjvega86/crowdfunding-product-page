@@ -6,12 +6,18 @@ const PledgeSelection = ({
   description,
   quantity,
   onChange,
-  value,
+  setIsOpen,
+  setSuccessIsOpen,
   current,
 }) => {
   const outOfStock = useMemo(() => (quantity <= 0 ? true : false), [quantity]);
   const isSelected = current === name;
   const [pledgeValue, setPledgeValue] = useState(pledgeAmt);
+
+  const handleComplete = () => {
+    setIsOpen(false);
+    setSuccessIsOpen(true);
+  };
 
   return (
     <div
@@ -47,7 +53,6 @@ const PledgeSelection = ({
       </div>
       {isSelected && (
         <div>
-          {console.log(pledgeValue)}
           <hr />
           <div className="flex flex-row justify-between mt-5">
             <div className="flex flex-row items-center p-2 border-2 w-24 rounded-full border-gray-light">
@@ -60,7 +65,10 @@ const PledgeSelection = ({
                 onInput={(e) => setPledgeValue(e.target.value)}
               />
             </div>
-            <button className="bg-cyan-light text-white rounded-full py-3 px-6 font-bold">
+            <button
+              onClick={handleComplete}
+              className="bg-cyan-light text-white rounded-full py-3 px-6 font-bold"
+            >
               Continue
             </button>
           </div>

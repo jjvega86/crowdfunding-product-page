@@ -4,6 +4,7 @@ import PledgeSelections from "./PledgeSelections";
 
 const RewardButton = ({ outOfStock }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [successIsOpen, setSuccessIsOpen] = useState(false);
   return (
     <div>
       {outOfStock ? (
@@ -27,8 +28,17 @@ const RewardButton = ({ outOfStock }) => {
         title="Back this project"
         description="Want to support us in bringing Mastercraft Bamboo Monitor Rise out in the world?"
       >
-        <PledgeSelections setIsOpen={setIsOpen} />
+        <PledgeSelections
+          setIsOpen={setIsOpen}
+          setSuccessIsOpen={setSuccessIsOpen}
+        />
       </Modal>
+      <Modal
+        isOpen={successIsOpen}
+        setIsOpen={setSuccessIsOpen}
+        title="This is complete!"
+        description="Still need some styles, dog."
+      />
     </div>
   );
 };
