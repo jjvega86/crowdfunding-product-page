@@ -1,9 +1,16 @@
 import { useMemo, useState } from "react";
-import RewardButton from "./RewardButton";
 
-const Pledge = ({ name, pledgeAmt, description, quantity, isSelection }) => {
+const PledgeSelection = ({
+  name,
+  pledgeAmt,
+  description,
+  quantity,
+  onChange,
+  value,
+  current,
+}) => {
   const outOfStock = useMemo(() => (quantity <= 0 ? true : false), [quantity]);
-  const [selected, setSelected] = useState(false);
+  const isSelected = current === name;
   const [pledgeValue, setPledgeValue] = useState(pledgeAmt);
 
   return (
@@ -13,16 +20,15 @@ const Pledge = ({ name, pledgeAmt, description, quantity, isSelection }) => {
       } border-2 border-solid border-gray-light rounded-lg p-6 mt-7`}
     >
       <div className="flex sm:flex-row sm:justify-between">
-        {isSelection && (
-          <input
-            className="mr-5"
-            type="radio"
-            name="pledge"
-            checked={selected}
-            onChange={() => setSelected(!selected)}
-            disabled={outOfStock}
-          />
-        )}
+        <input
+          className="mr-5"
+          type="radio"
+          name="pledge"
+          value={name}
+          checked={isSelected}
+          onChange={onChange}
+          disabled={outOfStock}
+        />
         <div>
           <h3 className="text-black text-lg font-bold mb-1">{name}</h3>
           {pledgeAmt && (
@@ -34,19 +40,12 @@ const Pledge = ({ name, pledgeAmt, description, quantity, isSelection }) => {
       <div className="sm:flex sm:flex-row sm:justify-between">
         {quantity && (
           <div className="flex flex-row items-center mb-7">
-            <p
-              className={`${
-                !isSelection ? `text-4xl` : `text-xl`
-              } font-bold text-black mr-2`}
-            >
-              {quantity}
-            </p>
+            <p className={`font-bold text-black mr-2`}>{quantity}</p>
             <p>left</p>
           </div>
         )}
-        {!isSelection && <RewardButton outOfStock={outOfStock} />}
       </div>
-      {selected && (
+      {isSelected && (
         <div>
           <hr />
           <div className="flex flex-row justify-between">
@@ -65,4 +64,4 @@ const Pledge = ({ name, pledgeAmt, description, quantity, isSelection }) => {
   );
 };
 
-export default Pledge;
+export default PledgeSelection;

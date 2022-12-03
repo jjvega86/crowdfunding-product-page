@@ -27,7 +27,7 @@ const RewardButton = ({ outOfStock }) => {
         title="Back this project"
         description="Want to support us in bringing Mastercraft Bamboo Monitor Rise out in the world?"
       >
-        <PledgeSelections />
+        <PledgeSelections setIsOpen={setIsOpen} />
       </Modal>
     </div>
   );
