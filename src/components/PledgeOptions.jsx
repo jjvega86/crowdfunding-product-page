@@ -1,10 +1,16 @@
+import { useContext, useState } from "react";
+import { PledgeContext } from "../context/PledgeContext";
+
 import CardWrapper from "./CardWrapper";
 import Pledge from "./Pledge";
-import { useContext } from "react";
-import { PledgeContext } from "../context/PledgeContext";
+import Modal from "./Modal";
+import CompleteModal from "./CompleteModal";
+import PledgeSelections from "./PledgeSelections";
 
 const PledgeOptions = () => {
   const { pledges } = useContext(PledgeContext);
+  const [isOpen, setIsOpen] = useState(false);
+  const [successIsOpen, setSuccessIsOpen] = useState(false);
 
   return (
     <>
@@ -32,6 +38,7 @@ const PledgeOptions = () => {
           launch our promotional campaign, and you'll be added to a special Backer
           member list.`}
             quantity={pledges.bambooStand}
+            setIsOpen={setIsOpen}
           />
           <Pledge
             name={"Black Edition Stand"}
@@ -39,6 +46,7 @@ const PledgeOptions = () => {
             description={`You get a Black Special Edition computer stand and a personal thank
       you. You’ll be added to our Backer member list. Shipping is included.`}
             quantity={pledges.blackEditionStand}
+            setIsOpen={setIsOpen}
           />
           <Pledge
             name={"Mahogany Special Edition"}
@@ -48,9 +56,22 @@ const PledgeOptions = () => {
       thank you. You’ll be added to our Backer member list. Shipping is
       included.`}
             quantity={pledges.mahoganySpecialEdition}
+            setIsOpen={setIsOpen}
           />
         </div>
       </CardWrapper>
+      <Modal
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+        title="Back this project"
+        description="Want to support us in bringing Mastercraft Bamboo Monitor Rise out in the world?"
+      >
+        <PledgeSelections
+          setIsOpen={setIsOpen}
+          setSuccessIsOpen={setSuccessIsOpen}
+        />
+      </Modal>
+      <CompleteModal isOpen={successIsOpen} setIsOpen={setSuccessIsOpen} />
     </>
   );
 };

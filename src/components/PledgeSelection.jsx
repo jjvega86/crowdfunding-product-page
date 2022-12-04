@@ -44,7 +44,7 @@ const PledgeSelection = ({
     >
       <div className="flex sm:flex-row sm:justify-between p-6">
         <input
-          className="mr-5 self-start mt-2"
+          className="mr-5 self-start mt-1 accent-cyan-dark scale-150"
           type="radio"
           name="pledge"
           value={title}
@@ -54,20 +54,28 @@ const PledgeSelection = ({
         />
         <div>
           <div className="flex flex-row justify-between">
-            <div className="flex flex-row justify-between">
-              <h3 className="text-black text-md font-bold mb-1">{title}</h3>
+            <div className="flex sm:flex-row flex-col justify-between mb-2">
+              <h3 className="text-black text-md font-bold mb-1 hover:cursor-pointer hover:text-cyan-light">
+                {title}
+              </h3>
               {pledgeAmt && (
-                <p className="text-cyan-light font-bold ml-6">{`Pledge $${pledgeAmt} or more`}</p>
+                <p className="text-cyan-light font-bold sm:ml-6">{`Pledge $${pledgeAmt} or more`}</p>
               )}
             </div>
             {quantity && (
-              <div className="flex flex-row items-center mb-7">
+              <div className="hidden sm:flex flex-row items-center mb-7">
                 <p className={`font-bold text-black mr-2`}>{quantity}</p>
                 <p>left</p>
               </div>
             )}
           </div>
           <p className="mb-7">{description}</p>
+          {quantity && (
+            <div className="sm:hidden flex flex-row items-center mb-7">
+              <p className={`font-bold text-black mr-2`}>{quantity}</p>
+              <p>left</p>
+            </div>
+          )}
         </div>
       </div>
       {isSelected && (
@@ -82,10 +90,10 @@ const PledgeSelection = ({
                 placeholder="Enter your pledge"
                 onChange={(e) => setPledgeValue(e.target.value)}
               />
-              <div className="flex flex-row items-center p-2 border-2 w-24 rounded-full border-gray-light">
+              <div className="flex flex-row items-center p-2 border-2 w-24 hover:border-cyan-light hover:cursor-pointer rounded-full border-gray-light">
                 <p className="ml-2">$</p>
                 <input
-                  className="ml-2 w-1/2 text-black font-bold text-lg"
+                  className="ml-2 w-1/2 text-black font-bold text-l"
                   type="number"
                   name="quantity"
                   value={pledgeValue}
@@ -94,7 +102,7 @@ const PledgeSelection = ({
               </div>
               <button
                 onClick={handleComplete}
-                className="bg-cyan-light text-white rounded-full py-3 px-6 font-bold"
+                className="bg-cyan-light hover:bg-cyan-dark text-white rounded-full py-3 px-6 font-bold"
               >
                 Continue
               </button>

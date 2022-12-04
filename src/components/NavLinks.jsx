@@ -1,17 +1,12 @@
 import React from "react";
+import NavLink from "./NavLink";
 
 const NavLinks = () => {
   return (
     <ul className="hidden sm:flex flex-row gap-8">
-      <a href="#about">
-        <li>About</li>
-      </a>
-      <a href="#discover">
-        <li>Discover</li>
-      </a>
-      <a href="#getstarted">
-        <li>Get Started</li>
-      </a>
+      <NavLink content="About" href="#about" />
+      <NavLink content="Discover" href="#discover" />
+      <NavLink content="Get Started" href="#getstarted" />
     </ul>
   );
 };

@@ -22,7 +22,7 @@ const CompleteModal = ({ isOpen, setIsOpen }) => {
               campaign is completed.
             </Dialog.Description>
             <button
-              className="bg-cyan-light text-white rounded-full py-3 px-10 font-bold mt-5"
+              className="bg-cyan-light hover:bg-cyan-dark text-white rounded-full py-3 px-10 font-bold mt-5"
               onClick={() => setIsOpen(false)}
             >
               Got it!
