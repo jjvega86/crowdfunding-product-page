@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Modal from "./Modal";
+import CompleteModal from "./CompleteModal";
 import PledgeSelections from "./PledgeSelections";
 
 const RewardButton = ({ outOfStock }) => {
@@ -33,12 +34,7 @@ const RewardButton = ({ outOfStock }) => {
           setSuccessIsOpen={setSuccessIsOpen}
         />
       </Modal>
-      <Modal
-        isOpen={successIsOpen}
-        setIsOpen={setSuccessIsOpen}
-        title="This is complete!"
-        description="Still need some styles, dog."
-      />
+      <CompleteModal isOpen={successIsOpen} setIsOpen={setSuccessIsOpen} />
     </div>
   );
 };
