@@ -11,7 +11,7 @@ const Modal = ({ children, isOpen, setIsOpen, title, description }) => {
       <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
       <div className="fixed inset-0 overflow-y-auto">
         <div className="flex min-h-full items-center justify-center p-4">
-          <Dialog.Panel className="relative rounded bg-white w-5/6 p-6">
+          <Dialog.Panel className="relative rounded bg-white md:w-1/2 w-5/6 p-6">
             <Dialog.Title className="text-lg font-bold mb-5">
               {title}
             </Dialog.Title>

@@ -9,7 +9,7 @@ import { PledgeProvider } from "./context/PledgeContext";
 function App() {
   return (
     <PledgeProvider>
-      <div className="font-commissioner">
+      <div className="font-commissioner leading-loose">
         <Header />
         <Title />
         <ProjectStats />

@@ -38,11 +38,13 @@ const PledgeSelection = ({
     <div
       className={`${
         outOfStock && "opacity-25"
-      } border-2 border-solid border-gray-light rounded-lg p-6 mt-7`}
+      } border-2 border-solid border-gray-light ${
+        isSelected && "border-cyan-light"
+      } rounded-lg mt-7`}
     >
-      <div className="flex sm:flex-row sm:justify-between">
+      <div className="flex sm:flex-row sm:justify-between p-6">
         <input
-          className="mr-5"
+          className="mr-5 self-start mt-2"
           type="radio"
           name="pledge"
           value={title}
@@ -51,43 +53,54 @@ const PledgeSelection = ({
           disabled={outOfStock}
         />
         <div>
-          <h3 className="text-black text-lg font-bold mb-1">{title}</h3>
-          {pledgeAmt && (
-            <p className="text-cyan-light font-medium mb-7">{`Pledge $${pledgeAmt} or more`}</p>
-          )}
-        </div>
-      </div>
-      <p className="mb-7">{description}</p>
-      <div className="sm:flex sm:flex-row sm:justify-between">
-        {quantity && (
-          <div className="flex flex-row items-center mb-7">
-            <p className={`font-bold text-black mr-2`}>{quantity}</p>
-            <p>left</p>
+          <div className="flex flex-row justify-between">
+            <div className="flex flex-row justify-between">
+              <h3 className="text-black text-md font-bold mb-1">{title}</h3>
+              {pledgeAmt && (
+                <p className="text-cyan-light font-bold ml-6">{`Pledge $${pledgeAmt} or more`}</p>
+              )}
+            </div>
+            {quantity && (
+              <div className="flex flex-row items-center mb-7">
+                <p className={`font-bold text-black mr-2`}>{quantity}</p>
+                <p>left</p>
+              </div>
+            )}
           </div>
-        )}
+          <p className="mb-7">{description}</p>
+        </div>
       </div>
       {isSelected && (
-        <div>
+        <>
           <hr />
-          <div className="flex flex-row justify-between mt-5">
-            <div className="flex flex-row items-center p-2 border-2 w-24 rounded-full border-gray-light">
-              <p className="ml-2">$</p>
+          <div className="p-6">
+            <div className="flex flex-row justify-between mt-5">
               <input
-                className="ml-2 w-1/2 text-black font-bold text-lg"
-                type="number"
-                name="quantity"
-                value={pledgeValue}
-                onInput={(e) => setPledgeValue(e.target.value)}
+                className="hidden md:block pl-4"
+                type="text"
+                name="pledge"
+                placeholder="Enter your pledge"
+                onChange={(e) => setPledgeValue(e.target.value)}
               />
+              <div className="flex flex-row items-center p-2 border-2 w-24 rounded-full border-gray-light">
+                <p className="ml-2">$</p>
+                <input
+                  className="ml-2 w-1/2 text-black font-bold text-lg"
+                  type="number"
+                  name="quantity"
+                  value={pledgeValue}
+                  onInput={(e) => setPledgeValue(e.target.value)}
+                />
+              </div>
+              <button
+                onClick={handleComplete}
+                className="bg-cyan-light text-white rounded-full py-3 px-6 font-bold"
+              >
+                Continue
+              </button>
             </div>
-            <button
-              onClick={handleComplete}
-              className="bg-cyan-light text-white rounded-full py-3 px-6 font-bold"
-            >
-              Continue
-            </button>
           </div>
-        </div>
+        </>
       )}
     </div>
   );
