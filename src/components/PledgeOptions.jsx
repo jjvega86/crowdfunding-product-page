@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import { PledgeContext } from "../context/PledgeContext";
+import { Transition } from "@headlessui/react";
 
 import CardWrapper from "./CardWrapper";
 import Pledge from "./Pledge";
@@ -60,18 +61,40 @@ const PledgeOptions = () => {
           />
         </div>
       </CardWrapper>
-      <Modal
-        isOpen={isOpen}
-        setIsOpen={setIsOpen}
-        title="Back this project"
-        description="Want to support us in bringing Mastercraft Bamboo Monitor Rise out in the world?"
+      <Transition
+        show={isOpen}
+        enter="transition-opacity duration-300"
+        enterFrom="opacity-0"
+        enterTo="opacity-100"
+        leave="transition-opacity duration-150"
+        leaveFrom="opacity-100"
+        leaveTo="opacity-0"
       >
-        <PledgeSelections
+        {" "}
+        <Modal
+          isOpen={isOpen}
           setIsOpen={setIsOpen}
-          setSuccessIsOpen={setSuccessIsOpen}
-        />
-      </Modal>
-      <CompleteModal isOpen={successIsOpen} setIsOpen={setSuccessIsOpen} />
+          title="Back this project"
+          description="Want to support us in bringing Mastercraft Bamboo Monitor Rise out in the world?"
+        >
+          <PledgeSelections
+            setIsOpen={setIsOpen}
+            setSuccessIsOpen={setSuccessIsOpen}
+          />
+        </Modal>
+      </Transition>
+      <Transition
+        show={successIsOpen}
+        enter="transition-opacity duration-300"
+        enterFrom="opacity-0"
+        enterTo="opacity-100"
+        leave="transition-opacity duration-150"
+        leaveFrom="opacity-100"
+        leaveTo="opacity-0"
+      >
+        {" "}
+        <CompleteModal isOpen={successIsOpen} setIsOpen={setSuccessIsOpen} />
+      </Transition>
     </>
   );
 };

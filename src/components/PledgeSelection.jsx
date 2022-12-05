@@ -15,6 +15,7 @@ const PledgeSelection = ({
   const { pledges, setPledges, setBackers, setRaised } =
     useContext(PledgeContext);
   const quantity = pledges[`${name}`];
+  const showQuantity = isNaN(quantity) ? false : true;
   const outOfStock = useMemo(
     () => (quantity <= 0 && name !== null ? true : false),
     [quantity, name]
@@ -62,7 +63,8 @@ const PledgeSelection = ({
                 <p className="text-cyan-light font-bold sm:ml-6">{`Pledge $${pledgeAmt} or more`}</p>
               )}
             </div>
-            {quantity && (
+            {console.log(quantity)}
+            {showQuantity && (
               <div className="hidden sm:flex flex-row items-center mb-7">
                 <p className={`font-bold text-black mr-2`}>{quantity}</p>
                 <p>left</p>
@@ -70,7 +72,7 @@ const PledgeSelection = ({
             )}
           </div>
           <p className="mb-7">{description}</p>
-          {quantity && (
+          {showQuantity && (
             <div className="sm:hidden flex flex-row items-center mb-7">
               <p className={`font-bold text-black mr-2`}>{quantity}</p>
               <p>left</p>
