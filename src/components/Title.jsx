@@ -18,7 +18,7 @@ const Title = () => {
         A beautiful & handcrafted monitor stand to reduce neck and eye strain.
       </p>
       <div className="flex justify-evenly sm:justify-between sm:px-3 sm:pb-8 mt-6">
-        <button className="bg-cyan-light text-white rounded-full py-3 px-10 font-bold hover:bg-cyan-dark">
+        <button className="bg-cyan-light text-white rounded-full py-3 px-3 sm:px-10 font-bold hover:bg-cyan-dark">
           Back this project
         </button>
         <Bookmark />

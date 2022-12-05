@@ -18,7 +18,7 @@ const Pledge = ({ name, pledgeAmt, description, quantity, setIsOpen }) => {
       </div>
       <p className="mb-7">{description}</p>
       <div className="sm:flex sm:flex-row sm:justify-between">
-        {quantity && (
+        {!outOfStock && (
           <div className="flex flex-row items-center mb-7">
             <p className={`text-3xl font-bold text-black mr-2`}>{quantity}</p>
             <p>left</p>

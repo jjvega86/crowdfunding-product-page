@@ -82,7 +82,7 @@ const PledgeSelection = ({
         <>
           <hr />
           <div className="p-6">
-            <div className="flex flex-row justify-between mt-5">
+            <div className="flex flex-row justify-between mt-5 gap-2">
               <input
                 className="hidden md:block pl-4"
                 type="text"
@@ -91,7 +91,7 @@ const PledgeSelection = ({
                 onChange={(e) => setPledgeValue(e.target.value)}
               />
               <div className="flex flex-row items-center p-2 border-2 w-24 hover:border-cyan-light hover:cursor-pointer rounded-full border-gray-light">
-                <p className="ml-2">$</p>
+                <p>$</p>
                 <input
                   className="ml-2 w-1/2 text-black font-bold text-l"
                   type="number"
